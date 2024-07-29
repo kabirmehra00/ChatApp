@@ -1,5 +1,5 @@
-const user1SelectorBtn = document.querySelector('#john-selector');  /* JOHN is User 1 */
-const user2SelectorBtn = document.querySelector('#jane-selector');  /* JANE is User 2 */
+const user1SelectorBtn = document.querySelector('#john-selector'); 
+const user2SelectorBtn = document.querySelector('#jane-selector');  
 const chatHeader = document.querySelector('.chat-header');
 const chatMessages = document.querySelector('.chat-messages');
 const chatInputForm = document.querySelector('.chat-input-form');
@@ -54,17 +54,13 @@ const sendMessage = (e) => {
     timestamp,
   };
 
-  /* Save message to local storage */
   messages.push(message);
   localStorage.setItem('messages', JSON.stringify(messages));
 
-  /* Add message to DOM */
   chatMessages.innerHTML += createChatMessageElement(message);
 
-  /* Clear input field */
   chatInputForm.reset();
 
-  /*  Scroll to bottom of chat messages */
   chatMessages.scrollTop = chatMessages.scrollHeight;
 };
 
